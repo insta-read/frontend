@@ -9,7 +9,14 @@ import { FormsModule } from '@angular/forms';
   template: `
     <form (ngSubmit)="onRegister()">
       <input
-        [(ngModel)]="userDetails.name"
+        [(ngModel)]="userDetails.firstname"
+        name="name"
+        type="text"
+        placeholder="Name"
+        required
+      />
+      <input
+        [(ngModel)]="userDetails.lastname"
         name="name"
         type="text"
         placeholder="Name"
@@ -36,7 +43,7 @@ import { FormsModule } from '@angular/forms';
   imports: [CommonModule, FormsModule],
 })
 export class RegisterComponent {
-  userDetails = { name: '', email: '', password: '' };
+  userDetails = { firstname: '', lastname: '', email: '', password: '' };
 
   constructor(private authService: AuthService, private router: Router) {}
 

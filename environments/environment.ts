@@ -5,7 +5,7 @@ export const environment = {
 
     identity_base_url: 'https://identity.smarttask.io/',
     auth_base_url: 'https://auth-backend.smarttask.io/',
-    api_base_url: 'https://localhost:7222/',
+    api_base_url: 'http://localhost:3000/',
     api2_base_url: 'https://localhost:7005/',
     ext_base_url: 'https://localhost:7174/',
     app_base_url: 'https://localhost:4200/',

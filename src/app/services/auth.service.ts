@@ -13,18 +13,18 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   register(userDetails: { email: string; password: string; name?: string }) {
-    return this.http.post('/api/register', userDetails);
+    return this.http.post('auth/register', userDetails);
   }
 
   login(credentials: { email: string; password: string }) {
     return this.http
-      .post('/api/login', credentials, { withCredentials: true })
+      .post('auth/login', credentials, { withCredentials: true })
       .pipe(tap(() => this.isAuthenticated.next(true)));
   }
 
   logout() {
     return this.http
-      .post('/api/logout', {}, { withCredentials: true })
+      .post('auth/logout', {}, { withCredentials: true })
       .pipe(tap(() => this.isAuthenticated.next(false)));
   }
 
